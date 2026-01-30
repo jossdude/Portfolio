@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joss Redfern | Manufacture Operations Developer</title>
+
+    <!-- Favicon - SVG with gradient matching site theme -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%236366f1'/><stop offset='100%25' stop-color='%23f472b6'/></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23g)'/><text x='50' y='68' font-family='Arial,sans-serif' font-size='50' font-weight='bold' fill='white' text-anchor='middle'>JR</text></svg>">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="logo" tabindex="0" role="button" aria-label="Go to top">JR</div>
+            <ul class="nav-links">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#little-projects">Little Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero visible" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <p class="greeting">👋 Hello, I'm</p>
+                <h1>Joss Redfern</h1>
+                <div class="typing-container">
+                    <span class="typing-text" aria-label="Manufacture Operations Developer"></span>
+                </div>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">What I <span>Do Best</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card" tabindex="0" role="button" aria-label="Problem Solving skill - click for effect">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3>Problem Solving</h3>
+                    <p>Breaking down complex challenges into elegant, efficient solutions that drive real results.</p>
+                </div>
+                <div class="skill-card" tabindex="0" role="button" aria-label="System Planning skill - click for effect">
+                    <div class="skill-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"/>
+                        </svg>
+                    </div>
+                    <h3>System Planning</h3>
+                    <p>Architecting robust systems that scale smoothly and adapt to changing business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1: Board Game Tracker -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-front">
+                            <div>
+                                <div class="project-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                                    </svg>
+                                </div>
+                                <h3>Board Game Tracker</h3>
+                                <p>A comprehensive application designed to catalog and track my ever-growing board game collection. Never lose track of your games again!</p>
+                            </div>
+                            <span class="project-tag">Personal Project</span>
+                            <div class="flip-hint">
+                                <span>Hover to flip</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <h3>🎲 Roll the Dice!</h3>
+                            <p>Track plays, record scores, manage wishlists, and discover patterns in your gaming habits.</p>
+                            <div class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white;">Collection Manager</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Project 2: Share Car Charging System -->
+                <article class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-front">
+                            <div>
+                                <div class="project-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <h3>Share Car Charging</h3>
+                                <p>An intelligent system for managing shared electric vehicle charging stations. Optimizing energy distribution and user scheduling.</p>
+                            </div>
+                            <span class="project-tag">Infrastructure</span>
+                            <div class="flip-hint">
+                                <span>Hover to flip</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="project-back">
+                            <h3>⚡ Power Up!</h3>
+                            <p>Smart scheduling, fair resource allocation, and real-time monitoring for shared EV charging infrastructure.</p>
+                            <div class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white;">Green Energy</div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Little Projects Section -->
+    <section id="little-projects">
+        <div class="container">
+            <h2 class="section-title">Little <span>Projects</span></h2>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Fun side projects and game helpers</p>
+            <div class="little-projects-grid">
+                <a href="https://plunder.joss.ing" target="_blank" rel="noopener noreferrer" class="little-project-card">
+                    <div class="little-project-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <h3>Plunder Helper</h3>
+                    <p>A companion tool for the board game Plunder</p>
+                    <span class="little-project-link">Visit Site →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Let's <span>Connect</span></h2>
+                <p>I'm always interested in hearing about new projects and opportunities. Let's build something amazing together!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Easter Egg Button -->
+    <button class="easter-egg-trigger" aria-label="Secret game - catch the targets!" title="Try me!">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+    </button>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="game-modal" role="dialog" aria-labelledby="game-title" aria-hidden="true">
+        <div class="game-container">
+            <button class="close-game" aria-label="Close game">&times;</button>
+            <h3 id="game-title">🎯 Catch the Targets!</h3>
+            <p>Click as many targets as you can in 15 seconds!</p>
+            <div class="game-timer">15</div>
+            <div class="game-area" id="game-area"></div>
+            <div class="game-score">Score: <span id="score">0</span></div>
+            <button class="btn btn-primary" id="start-game">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with <span>♥</span> by Joss Redfern © 2026</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/particles.js"></script>
+    <script src="js/typing.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
