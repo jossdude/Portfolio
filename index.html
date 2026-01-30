@@ -17,10 +17,21 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- Set theme before first paint to avoid flash -->
+    <script>
+    (function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+    </script>
 </head>
 <body>
     <!-- Particle Background Canvas -->
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <!-- Light switch - top left -->
+    <button type="button" class="theme-switch" id="theme-switch" role="switch" aria-label="Toggle light mode" aria-checked="false" title="Toggle light mode">
+        <span class="theme-switch-track">
+            <span class="theme-switch-knob"></span>
+        </span>
+    </button>
 
     <!-- Navigation -->
     <nav role="navigation" aria-label="Main navigation">
@@ -89,63 +100,7 @@
         <div class="container">
             <h2 class="section-title">Featured <span>Projects</span></h2>
             <div class="projects-grid">
-                <!-- Project 1: Board Game Tracker -->
-                <article class="project-card">
-                    <div class="project-card-inner">
-                        <div class="project-front">
-                            <div>
-                                <div class="project-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                                    </svg>
-                                </div>
-                                <h3>Board Game Tracker</h3>
-                                <p>A comprehensive application designed to catalog and track my ever-growing board game collection. Never lose track of your games again!</p>
-                            </div>
-                            <span class="project-tag">Personal Project</span>
-                            <div class="flip-hint">
-                                <span>Hover to flip</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-back">
-                            <h3>🎲 Roll the Dice!</h3>
-                            <p>Track plays, record scores, manage wishlists, and discover patterns in your gaming habits.</p>
-                            <div class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white;">Collection Manager</div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2: Share Car Charging System -->
-                <article class="project-card">
-                    <div class="project-card-inner">
-                        <div class="project-front">
-                            <div>
-                                <div class="project-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                                    </svg>
-                                </div>
-                                <h3>Share Car Charging</h3>
-                                <p>An intelligent system for managing shared electric vehicle charging stations. Optimizing energy distribution and user scheduling.</p>
-                            </div>
-                            <span class="project-tag">Infrastructure</span>
-                            <div class="flip-hint">
-                                <span>Hover to flip</span>
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="project-back">
-                            <h3>⚡ Power Up!</h3>
-                            <p>Smart scheduling, fair resource allocation, and real-time monitoring for shared EV charging infrastructure.</p>
-                            <div class="btn btn-secondary" style="background: rgba(255,255,255,0.2); border-color: white;">Green Energy</div>
-                        </div>
-                    </div>
-                </article>
+                <!-- Cards injected by js/projects-render.js -->
             </div>
         </div>
     </section>
@@ -156,16 +111,7 @@
             <h2 class="section-title">Little <span>Projects</span></h2>
             <p style="text-align: center; color: var(--text-muted); margin-bottom: 2rem;">Fun side projects and game helpers</p>
             <div class="little-projects-grid">
-                <a href="https://plunder.joss.ing" target="_blank" rel="noopener noreferrer" class="little-project-card">
-                    <div class="little-project-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                        </svg>
-                    </div>
-                    <h3>Plunder Helper</h3>
-                    <p>A companion tool for the board game Plunder</p>
-                    <span class="little-project-link">Visit Site →</span>
-                </a>
+                <!-- Cards injected by js/projects-render.js -->
             </div>
         </div>
     </section>
@@ -206,10 +152,12 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="js/theme.js"></script>
     <script src="js/particles.js"></script>
     <script src="js/typing.js"></script>
     <script src="js/scroll.js"></script>
     <script src="js/skills.js"></script>
     <script src="js/game.js"></script>
+    <script src="js/projects-render.js"></script>
 </body>
 </html>

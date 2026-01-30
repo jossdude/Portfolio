@@ -130,3 +130,14 @@
     font-size: 2rem;
     line-height: 1;
 }
+
+/* ============================================
+   Light Mode - Game Modal Overrides
+   ============================================ */
+[data-theme="light"] .game-modal {
+    background: rgba(241, 245, 249, 0.95);
+}
+
+[data-theme="light"] .game-area {
+    border-color: rgba(99, 102, 241, 0.4);
+}
