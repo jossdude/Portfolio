@@ -131,6 +131,69 @@
     line-height: 1;
 }
 
+/* High score table (global – persisted in localStorage) */
+.high-scores {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(99, 102, 241, 0.2);
+    text-align: left;
+}
+
+.high-scores h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.high-score-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 180px;
+    overflow-y: auto;
+}
+
+.high-score-list li {
+    display: grid;
+    grid-template-columns: 1.5rem 1fr 2.5rem;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.35rem 0.5rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.high-score-list li:nth-child(odd) {
+    background: rgba(99, 102, 241, 0.08);
+}
+
+.hs-rank {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.hs-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hs-score {
+    text-align: right;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.hs-empty,
+.hs-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
 /* ============================================
    Light Mode - Game Modal Overrides
    ============================================ */
