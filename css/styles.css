@@ -54,7 +54,7 @@ body {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 90;
+    z-index: 110;
     width: 52px;
     height: 28px;
     min-width: 52px;
