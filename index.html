@@ -39,6 +39,7 @@
             <div class="logo" tabindex="0" role="button" aria-label="Go to top">JR</div>
             <ul class="nav-links">
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#lastfm">Music</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#little-projects">Little Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -90,6 +91,27 @@
                     </div>
                     <h3>System Planning</h3>
                     <p>Architecting robust systems that scale smoothly and adapt to changing business needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Last.fm Section -->
+    <section id="lastfm">
+        <div class="container">
+            <h2 class="section-title">What I'm <span>Listening To</span></h2>
+            <div class="lastfm-grid">
+                <div class="lastfm-card" id="lastfm-now-playing">
+                    <div class="lastfm-loading">
+                        <div class="lastfm-loading-spinner"></div>
+                        <p>Loading...</p>
+                    </div>
+                </div>
+                <div class="lastfm-card" id="lastfm-top-artist">
+                    <div class="lastfm-loading">
+                        <div class="lastfm-loading-spinner"></div>
+                        <p>Loading...</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -156,6 +178,13 @@
     </footer>
 
     <!-- JavaScript -->
+    <!-- Last.fm: set your API key and username to display music stats -->
+    <script>
+    window.LASTFM_CONFIG = {
+        apiKey: '5031f6877f3b25b65043260414d84e1d',
+        username: 'JossDude'
+    };
+    </script>
     <!-- Leaderboard: set your Supabase URL + anon key for global high scores -->
     <script>
     window.LEADERBOARD_CONFIG = {
@@ -171,5 +200,6 @@
     <script src="js/leaderboard-api.js"></script>
     <script src="js/game.js"></script>
     <script src="js/projects-render.js"></script>
+    <script src="js/lastfm.js"></script>
 </body>
 </html>
