@@ -644,6 +644,179 @@ nav .container {
 }
 
 /* ============================================
+   Last.fm Section
+   ============================================ */
+.lastfm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.lastfm-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lastfm-loading {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.lastfm-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(99, 102, 241, 0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    animation: lastfm-spin 1s linear infinite;
+}
+
+@keyframes lastfm-spin {
+    to { transform: rotate(360deg); }
+}
+
+.lastfm-track,
+.lastfm-artist {
+    width: 100%;
+    text-align: center;
+}
+
+.lastfm-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.lastfm-status-live {
+    background: rgba(52, 211, 153, 0.2);
+    color: var(--accent);
+}
+
+.lastfm-status-recent {
+    background: rgba(99, 102, 241, 0.2);
+    color: var(--primary-light);
+}
+
+.lastfm-pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: lastfm-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes lastfm-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+}
+
+.lastfm-label {
+    display: inline-block;
+    padding: 0.35rem 0.75rem;
+    background: rgba(244, 114, 182, 0.2);
+    color: var(--secondary);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.lastfm-track-image,
+.lastfm-artist-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    margin: 0 auto 1rem;
+    object-fit: cover;
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.lastfm-track-image-placeholder,
+.lastfm-artist-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lastfm-track-image-placeholder svg,
+.lastfm-artist-image-placeholder svg {
+    width: 40px;
+    height: 40px;
+    stroke: var(--text-muted);
+}
+
+.lastfm-track-info,
+.lastfm-artist-info {
+    text-align: center;
+}
+
+.lastfm-track-name,
+.lastfm-artist-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.25rem;
+    transition: color 0.3s ease;
+}
+
+.lastfm-track-name:hover,
+.lastfm-artist-name:hover {
+    color: var(--primary-light);
+}
+
+.lastfm-track-artist,
+.lastfm-artist-plays {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.lastfm-empty,
+.lastfm-error {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.lastfm-empty-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lastfm-empty-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--text-muted);
+}
+
+/* ============================================
    Contact Section
    ============================================ */
 .contact {
@@ -759,7 +932,8 @@ footer span {
 [data-theme="light"] .skill-card,
 [data-theme="light"] .project-front,
 [data-theme="light"] .little-project-card,
-[data-theme="light"] .contact-link {
+[data-theme="light"] .contact-link,
+[data-theme="light"] .lastfm-card {
     border-color: rgba(99, 102, 241, 0.25);
 }
 
