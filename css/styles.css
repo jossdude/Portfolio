@@ -108,7 +108,7 @@ body {
 }
 
 .theme-switch.theme-switch-on .theme-switch-knob {
-    transform: translateX(22px);
+    transform: translateX(20px);
 }
 
 /* ============================================
