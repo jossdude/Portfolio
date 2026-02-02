@@ -79,7 +79,7 @@
     /**
      * Get the top artist for the specified period
      */
-    async function getTopArtist(period = '12month') {
+    async function getTopArtist(period = '1month') {
         const data = await apiRequest('user.getTopArtists', { period, limit: 1 });
         if (!data || !data.topartists || !data.topartists.artist) return null;
 
@@ -87,12 +87,52 @@
         const artist = Array.isArray(artists) ? artists[0] : artists;
         if (!artist) return null;
 
+        // Last.fm deprecated artist images, so fetch their top album for an image
+        const image = await getArtistTopAlbumImage(artist.name);
+
         return {
             name: artist.name,
             playcount: parseInt(artist.playcount, 10),
-            image: getArtistImage(artist),
+            image: image,
             url: artist.url
         };
+    }
+
+    /**
+     * Get an artist's top album image as a workaround for deprecated artist images
+     */
+    async function getArtistTopAlbumImage(artistName) {
+        if (!isConfigured()) return null;
+
+        const { apiKey } = window.LASTFM_CONFIG;
+        const url = new URL(LASTFM_API_BASE);
+        url.searchParams.set('method', 'artist.getTopAlbums');
+        url.searchParams.set('artist', artistName);
+        url.searchParams.set('api_key', apiKey);
+        url.searchParams.set('format', 'json');
+        url.searchParams.set('limit', '1');
+
+        try {
+            const response = await fetch(url.toString());
+            if (!response.ok) return null;
+            const data = await response.json();
+
+            if (!data.topalbums || !data.topalbums.album) return null;
+            const albums = data.topalbums.album;
+            const album = Array.isArray(albums) ? albums[0] : albums;
+            if (!album || !album.image) return null;
+
+            // Get the largest available image
+            const sizes = ['extralarge', 'large', 'medium', 'small'];
+            for (const size of sizes) {
+                const img = album.image.find(i => i.size === size);
+                if (img && img['#text']) return img['#text'];
+            }
+            return null;
+        } catch (error) {
+            console.error('Failed to fetch artist album image:', error);
+            return null;
+        }
     }
 
     /**
@@ -201,7 +241,7 @@
 
         container.innerHTML = `
             <div class="lastfm-artist">
-                <div class="lastfm-label">Top Artist (12 months)</div>
+                <div class="lastfm-label">Top Artist (1 month)</div>
                 ${imageHtml}
                 <div class="lastfm-artist-info">
                     <a href="${escapeHtml(artist.url)}" target="_blank" rel="noopener noreferrer" class="lastfm-artist-name">
@@ -250,7 +290,7 @@
             // Fetch both in parallel
             const [track, artist] = await Promise.all([
                 getNowPlaying(),
-                getTopArtist('12month')
+                getTopArtist('1month')
             ]);
 
             renderNowPlaying(nowPlayingContainer, track);

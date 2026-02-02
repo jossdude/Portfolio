@@ -134,6 +134,11 @@ section.visible {
     transform: translateY(0);
 }
 
+section.page-section {
+    padding-top: 8rem;
+    min-height: calc(100vh - 100px);
+}
+
 /* ============================================
    Navigation
    ============================================ */
@@ -165,6 +170,7 @@ nav .container {
     background-clip: text;
     cursor: pointer;
     transition: transform 0.3s var(--transition);
+    text-decoration: none;
 }
 
 .logo:hover {
@@ -200,8 +206,13 @@ nav .container {
     color: var(--light);
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a.active::after {
     width: 100%;
+}
+
+.nav-links a.active {
+    color: var(--light);
 }
 
 /* ============================================
@@ -338,6 +349,26 @@ nav .container {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+/* ============================================
+   About Section
+   ============================================ */
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
 }
 
 /* ============================================
