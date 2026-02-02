@@ -204,7 +204,7 @@ function spawnTarget() {
     target.style.left = Math.random() * maxX + 'px';
     target.style.top = Math.random() * maxY + 'px';
 
-    target.addEventListener('click', () => {
+    function hitTarget() {
         if (!isGameRunning) return;
         score++;
         scoreDisplay.textContent = score;
@@ -217,6 +217,12 @@ function spawnTarget() {
             duration: 200,
             easing: 'ease-out'
         }).onfinish = () => target.remove();
+    }
+
+    target.addEventListener('click', hitTarget);
+    target.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        hitTarget();
     });
 
     gameArea.appendChild(target);
@@ -253,8 +259,12 @@ function initGame() {
 
     renderHighScores();
 
-    // Event listeners
+    // Event listeners - add both click and touchend for mobile compatibility
     easterEggTrigger.addEventListener('click', openGameModal);
+    easterEggTrigger.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        openGameModal();
+    });
     closeButton.addEventListener('click', closeGame);
     startButton.addEventListener('click', startGame);
 

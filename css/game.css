@@ -17,6 +17,8 @@
     border: 1px solid rgba(99, 102, 241, 0.2);
     transition: all 0.3s var(--transition);
     z-index: 50;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .easter-egg-trigger:hover {
@@ -56,6 +58,7 @@
     border: 2px solid var(--primary);
     max-width: 400px;
     width: 90%;
+    position: relative;
 }
 
 .game-container h3 {
@@ -90,6 +93,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .game-target:hover {
